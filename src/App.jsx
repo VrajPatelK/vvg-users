@@ -4,7 +4,8 @@ import { InputText } from "primereact/inputtext";
 import { Badge } from "primereact/badge";
 import Carosouel from "./Components/Carosuel/Carosouel";
 import TestimonialCarosuel from "./Components/Testimonials/TestimonialCarosuel";
-
+import Footer from "./Components/Footer/Footer";
+import CountersContainer from "./Components/Counters/CounterContainer";
 
 // Component for the logo .
 const start = (
@@ -24,8 +25,7 @@ const end = (
 );
 
 function App() {
-
-  // Used to render the items in the menbar.. 
+  // Used to render the items in the menbar..
   const itemRenderer = (item) => (
     <a className="flex align-items-center p-menuitem-link">
       <span className={item.icon} />
@@ -106,7 +106,9 @@ function App() {
     <div className="card w-lg-80 mx-auto">
       <Menubar model={items} start={start} end={end} />
       <Carosouel />
+      <CountersContainer />
       <TestimonialCarosuel />
+      <Footer />
     </div>
   );
 }
