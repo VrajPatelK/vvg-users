@@ -5,7 +5,6 @@
   align-items: center;
 }
 
-
 @media (min-width: 1150px) {
   .w-lg-80 {
     width: 80vw !important; /* Set width to 80vw on medium and larger screens */

@@ -4,17 +4,15 @@ import { InputText } from "primereact/inputtext";
 import { Badge } from "primereact/badge";
 import Carosouel from "./Components/Carosuel/Carosouel";
 import TestimonialCarosuel from "./Components/Testimonials/TestimonialCarosuel";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import ContactUs from "./Components/ContactUs/ContactUs";
 import Footer from "./Components/Footer/Footer";
-import CountersContainer from "./Components/Counters/CounterContainer";
-
+import Logo from "./assets/t-logo.png";
 // Component for the logo .
 const start = (
-  <img
-    alt="logo"
-    src="https://primefaces.org/cdn/primereact/images/logo.png"
-    height="40"
-    className="mr-2"
-  ></img>
+  <Link to={"/"}>
+    <img alt="logo" src={Logo} height="20" className="mr-2 w-3"></img>
+  </Link>
 );
 
 // component for the search bar .
@@ -27,7 +25,7 @@ const end = (
 function App() {
   // Used to render the items in the menbar..
   const itemRenderer = (item) => (
-    <a className="flex align-items-center p-menuitem-link">
+    <Link to={item?.path} className="flex align-items-center p-menuitem-link">
       <span className={item.icon} />
       <span className="mx-2">{item.label}</span>
       {item.badge && <Badge className="ml-auto" value={item.badge} />}
@@ -36,17 +34,19 @@ function App() {
           {item.shortcut}
         </span>
       )}
-    </a>
+    </Link>
   );
 
   // all items of the menu bar.
   const items = [
     {
       label: "Home",
+      path: "/",
       icon: "pi pi-home",
     },
     {
       label: "Features",
+      path: "/features",
       icon: "pi pi-star",
     },
     {
@@ -96,6 +96,7 @@ function App() {
     },
     {
       label: "Contact",
+      path: "/contact",
       icon: "pi pi-envelope",
       badge: 3,
       template: itemRenderer,
@@ -103,12 +104,24 @@ function App() {
   ];
 
   return (
-    <div className="card w-lg-80 mx-auto">
-      <Menubar model={items} start={start} end={end} />
-      <Carosouel />
-      <CountersContainer />
-      <TestimonialCarosuel />
-      <Footer />
+    <div className="card  mx-auto">
+      <Router>
+        <Menubar model={items} start={start} end={end} />
+        <Routes initialRouteName="/">
+          <Route
+            path="/"
+            element={
+              <>
+                <Carosouel />
+                <TestimonialCarosuel />
+              </>
+            }
+          />
+          <Route path="/contact" element={<ContactUs />} />
+          {/* <TestimonialCarosuel /> */}
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
