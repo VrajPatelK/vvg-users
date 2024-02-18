@@ -2,6 +2,7 @@ import React from "react";
 import { Menubar } from "primereact/menubar";
 import { InputText } from "primereact/inputtext";
 import { Badge } from "primereact/badge";
+import CounterContainer from "./Components/Counters/CounterContainer"
 import Carosouel from "./Components/Carosuel/Carosouel";
 import TestimonialCarosuel from "./Components/Testimonials/TestimonialCarosuel";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -104,7 +105,7 @@ function App() {
   ];
 
   return (
-    <div className="card  mx-auto">
+    <div className="card w-lg-80  mx-auto">
       <Router>
         <Menubar model={items} start={start} end={end} />
         <Routes initialRouteName="/">
@@ -113,6 +114,7 @@ function App() {
             element={
               <>
                 <Carosouel />
+                <CounterContainer />
                 <TestimonialCarosuel />
               </>
             }
