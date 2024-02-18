@@ -1,0 +1,30 @@
+/* Slideshow.css */
+.slideshow {
+  position: relative;
+  /* background-image: url('../../assets/image.avif'); */
+  width: 100%;
+  height: 80vh;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+.animate {
+  animation: fadeIn 0.5s ease forwards; /* Apply fadeIn animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slideshow-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+}
