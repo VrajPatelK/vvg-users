@@ -1,9 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.p-carousel-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+
+@media (min-width: 1150px) {
+  .w-lg-80 {
+    width: 80vw !important; /* Set width to 80vw on medium and larger screens */
+  }
 }

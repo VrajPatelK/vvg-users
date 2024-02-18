@@ -1,0 +1,25 @@
+/* Testimonial.css */
+.testimonial-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    position: relative; 
+    border-bottom: 2px solid rgb(0, 215, 215);
+  }
+  
+  .testimonial-content {
+    margin-top: 20px; 
+  }
+  
+  .testimonial-image {
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px; /* Move the image 50% outside of the component */
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+  }
