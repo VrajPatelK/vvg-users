@@ -1,9 +1,12 @@
-.p-carousel-item{
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.p-carousel-item {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 @media (min-width: 1150px) {
   .w-lg-80 {
