@@ -2,13 +2,16 @@ import React from "react";
 import { Menubar } from "primereact/menubar";
 import { InputText } from "primereact/inputtext";
 import { Badge } from "primereact/badge";
-import CounterContainer from "./Components/Counters/CounterContainer"
+import CounterContainer from "./Components/Counters/CounterContainer";
 import Carosouel from "./Components/Carosuel/Carosouel";
 import TestimonialCarosuel from "./Components/Testimonials/TestimonialCarosuel";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import Footer from "./Components/Footer/Footer";
 import Logo from "./assets/t-logo.png";
+import Header from "./Components/Header/Header";
+import AboutUs from "./Components/AboutUs/AboutUs";
+
 // Component for the logo .
 const start = (
   <Link to={"/"}>
@@ -105,26 +108,32 @@ function App() {
   ];
 
   return (
-    <div className="card w-lg-80  mx-auto">
-      <Router>
-        <Menubar model={items} start={start} end={end} />
-        <Routes initialRouteName="/">
-          <Route
-            path="/"
-            element={
-              <>
-                <Carosouel />
-                <CounterContainer />
-                <TestimonialCarosuel />
-              </>
-            }
-          />
-          <Route path="/contact" element={<ContactUs />} />
-          {/* <TestimonialCarosuel /> */}
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
+    <>
+      <Header />
+      <div className="card w-lg-80 mx-auto">
+        <Router>
+          {/* <Menubar model={items} start={start} /> */}
+          <Routes initialRouteName="/">
+            <Route
+              path="/"
+              element={
+                <>
+                  <Carosouel />
+                  <CounterContainer />
+                  <TestimonialCarosuel
+                    products={[{}, {}, {}, {}, {}, {}, {}, {}]}
+                  />
+                </>
+              }
+            />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            {/* <TestimonialCarosuel /> */}
+          </Routes>
+          <Footer />
+        </Router>
+      </div>
+    </>
   );
 }
 

@@ -1,0 +1,43 @@
+.teacher-block-even {
+    display: flex;
+}
+
+.teacher-bio-even {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.teacher-block-odd {
+    display: flex;
+}
+
+.teacher-bio-odd {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+}
+.teacher-image {
+    transition: transform 0.3s ease;
+    /* Transition effect on transform */
+}
+
+.teacher-image:hover {
+    transform: scale(1.02);
+    /* Scale up by 10% on hover */
+}
+
+@media screen and (max-width: 968px) {
+    .teacher-block-odd {
+        flex-direction: column-reverse;
+    }
+}
+@media screen and (max-width: 968px) {
+    .teacher-block-even {
+        flex-direction: column;
+    }
+}

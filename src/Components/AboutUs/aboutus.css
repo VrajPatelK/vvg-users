@@ -1,0 +1,51 @@
+.aboutus-heading {
+    font-size: xx-large;
+    border-bottom: 1px solid gray;
+}
+
+.our-mission-heading {
+    font-size: xx-large;
+}
+
+.our-mission-content {
+    font-size: large;
+}
+
+.slogan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+.owners-block {
+
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    /* Adjust grid layout for mobile screens */
+}
+
+.owners-banner {
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.owners-img {
+    transition: transform 0.3s ease;
+    /* Transition effect on transform */
+}
+
+.owners-img:hover {
+    transform: scale(1.02);
+    /* Scale up by 10% on hover */
+}
+
+/* Media query for screens smaller than 600px (typical mobile phones) */
+@media (max-width: 600px) {
+    .owners-block {
+        grid-template-columns: 1fr;
+        /* Display in a single column */
+    }
+}

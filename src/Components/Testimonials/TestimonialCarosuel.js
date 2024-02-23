@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Carousel } from "primereact/carousel";
 import Testimonial from "./Testimonial";
 
-export default function TestimonialCarosuel() {
-  const [products, setProducts] = useState([{}, {}, {}, {}, {}, {}]);
+export default function TestimonialCarosuel({ products }) {
   const responsiveOptions = [
     {
       breakpoint: "1400px",
@@ -28,13 +27,11 @@ export default function TestimonialCarosuel() {
   ];
 
   const productTemplate = (product) => {
-    return <Testimonial />;
+    return <Testimonial product={product} />;
   };
 
   return (
     <div className="card mt-5">
-      <h1>Testimonial</h1>
-
       <Carousel
         value={products}
         numVisible={4}
